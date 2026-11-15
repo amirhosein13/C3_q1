@@ -1,0 +1,5 @@
+tests/
+sandbox/
+logs/
+*.exe
+._*.compile.out

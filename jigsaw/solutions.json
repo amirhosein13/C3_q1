@@ -1,0 +1,11 @@
+{
+    "model.cpp": { "verdict": "model_solution" },
+    "brute.cpp": { "verdict": "incorrect", "except": { "samples": "correct", "small": "correct" } },
+    "greedy.cpp": { "verdict": "incorrect", "except": { "samples": "correct", "q2n": "correct" } },
+    "cover.cpp": { "verdict": "incorrect", "except": { "q2n": "correct", "qn": "correct" } },
+    "odd.cpp": { "verdict": "incorrect", "except": { "q2n": "correct", "qn": "correct", "odd": "correct" } },
+    "wa_guess.cpp": { "verdict": "incorrect", "except": { "samples": "correct", "odd": "correct" } },
+    "wa_offbyone.cpp": { "verdict": "incorrect" },
+    "wa_infirst.cpp": { "verdict": "incorrect" },
+    "tle_n4.cpp": { "verdict": "time_limit", "except": { "samples": "correct", "small": "correct" } }
+}

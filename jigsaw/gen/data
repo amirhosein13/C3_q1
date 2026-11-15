@@ -1,0 +1,77 @@
+# gen <type> <qmode> <nmin> <nmax> <Tmax> <sumN2> <parity> <seedtag> [chunk]
+@subtask samples
+manual sample-1.in
+
+@subtask small
+gen all n1 2 3 1000 1000000 any s1
+gen random n1 2 2 1000 1000000 any s2
+gen random n1 3 3 1000 1000000 any s3
+gen random n1 2 3 1000 1000000 any s4
+
+@subtask q2n
+gen all 2n 2 6 1000 1000000 any a1
+gen random 2n 7 7 1000 1000000 any a2
+gen random 2n 8 12 1000 1000000 any a3
+gen random 2n 2 200 1000 1000000 any a4
+gen max 2n 200 200 1000 1000000 any a5
+gen max 2n 199 199 1000 1000000 any a6
+gen special 2n 100 200 1000 1000000 any a7
+gen zigzag 2n 2 200 1000 1000000 any a8
+gen blocks 2n 2 200 1000 1000000 any a9
+gen mixed 2n 2 200 1000 1000000 any a10
+gen identity 2n 2 200 1000 1000000 any a11
+gen reverse 2n 2 200 1000 1000000 any a12
+
+@subtask qn
+gen all n 2 6 1000 1000000 any b1
+gen random n 7 7 1000 1000000 any b2
+gen random n 8 12 1000 1000000 any b3
+gen random n 2 200 1000 1000000 any b4
+gen max n 200 200 1000 1000000 any b5
+gen max n 199 199 1000 1000000 any b6
+gen special n 100 200 1000 1000000 any b7
+gen zigzag n 2 200 1000 1000000 any b8
+gen blocks n 2 200 1000 1000000 any b9
+gen mixed n 2 200 1000 1000000 any b10
+gen identity n 2 200 1000 1000000 any b11
+gen reverse n 2 200 1000 1000000 any b12
+
+@subtask odd
+gen all n1 3 5 1000 1000000 odd c1
+gen random n1 7 7 1000 1000000 odd c2
+gen random n1 9 15 1000 1000000 odd c3
+gen random n1 3 199 1000 1000000 odd c4
+gen max n1 199 199 1000 1000000 odd c5
+gen special n1 3 199 1000 1000000 odd c6
+gen special n1 150 199 1000 1000000 odd c7
+gen zigzag n1 3 199 1000 1000000 odd c8
+gen zigzag n1 3 15 1000 1000000 odd c9
+gen blocks n1 3 199 1000 1000000 odd c10
+gen mixed n1 3 199 1000 1000000 odd c11
+gen identity n1 3 199 1000 1000000 odd c12
+gen reverse n1 3 199 1000 1000000 odd c13
+
+@subtask full
+@include samples small odd
+gen all n1 2 7 1000 1000000 any d1 0
+gen all n1 2 7 1000 1000000 any d2 1
+gen all n1 2 7 1000 1000000 any d3 2
+gen all n1 2 7 1000 1000000 any d4 3
+gen all n1 2 7 1000 1000000 any d5 4
+gen all n1 2 7 1000 1000000 any d6 5
+gen random n1 8 8 1000 1000000 any d7
+gen random n1 9 12 1000 1000000 even d8
+gen random n1 2 200 1000 1000000 any d9
+gen max n1 200 200 1000 1000000 any d10
+gen max n1 198 198 1000 1000000 any d11
+gen special n1 2 200 1000 1000000 even d12
+gen special n1 150 200 1000 1000000 even d13
+gen special n1 2 14 1000 1000000 even d14
+gen zigzag n1 2 200 1000 1000000 even d15
+gen zigzag n1 2 14 1000 1000000 even d16
+gen blocks n1 2 200 1000 1000000 any d17
+gen mixed n1 2 200 1000 1000000 any d18
+gen mixed n1 2 30 1000 1000000 even d19
+gen identity n1 2 200 1000 1000000 even d20
+gen reverse n1 2 200 1000 1000000 even d21
+gen random n1 31 31 1000 1000000 any d22

@@ -1,0 +1,59 @@
+CMS ADMIN PANEL VALUES — task "jigsaw" (Jigsaw Puzzle)
+=======================================================
+Written for CMS 1.4 / 1.5 (Admin Web Server, "AWS"). Field names may differ slightly between versions.
+
+NOTE: this problem is INTERACTIVE. It is NOT a Batch task: it uses task type "Communication"
+with a manager (interactor). There is no checker; the manager computes the score itself.
+
+[Task page]
+Name (short name / codename) : jigsaw
+Title                        : Jigsaw Puzzle
+Statement language code      : en          (file: statement.pdf)
+Attachments                  : attachments/sample.in , attachments/local_interactor.cpp
+Score precision              : 0
+Score mode                   : Use best among the tokened and the last submissions (CMS<=1.4 default)
+                               -> recommended:  "Maximum score among all submissions, per subtask"
+                                  (IOI style, called max_subtask; available in CMS >= 1.4)
+Feedback level (CMS 1.5)     : Full
+Tokens                       : token mode = "Tokens disabled" (IOI style; feedback comes from public test cases)
+Max submissions / min interval: optional, e.g. max 50 submissions, 60 seconds minimum interval
+
+[Dataset "Default" (the active dataset)]
+Time limit                   : 2          (seconds; this is CPU time of the contestant program)
+Memory limit                 : 256        (MiB — the panel asks for MiB in CMS 1.4 and 1.5; do NOT type bytes)
+Task type                    : Communication
+   Number of user processes  : 1
+   Compilation               : alone   ("Submissions are self-sufficient")
+   User I/O                  : std_io  ("Using standard input and output")
+Score type                   : GroupMin
+Score type parameters        : (paste exactly, one line)
+[[0, "^00-[0-9]+$"], [10, "^01-[0-9]+$"], [15, "^02-[0-9]+$"], [20, "^03-[0-9]+$"], [25, "^04-[0-9]+$"], [30, "^0[0145]-[0-9]+$"]]
+
+Managers (upload)            : manager      (static Linux x86-64 binary; the file name MUST be exactly "manager",
+                                             no extension. Source for reference: manager.cpp — do not upload it)
+Checker                      : none (not used by Communication tasks; the manager writes the score)
+
+[Testcases]
+"Add multiple testcases" with file tests.zip (64 inputs + 64 outputs, flat)
+Input template               : *.in
+Output template              : *.out
+Overwrite                    : checked (only matters on re-upload)
+Public                       : tick "public" for ALL test cases (IOI-style full feedback: contestants see their
+                               score per subtask). In CMS a contestant only sees the score of PUBLIC test cases
+                               (unless tokens are used), so with only private tests they would always see 0.
+Expected test count          : 64   (00-01, 01-01..01-04, 02-01..02-12, 03-01..03-12, 04-01..04-13, 05-01..05-22)
+
+[Subtasks]  (GroupMin groups; a subtask scores only if every test matched by its regex gets 1.0)
+#0   0 pts  ^00-.. : example                           (1 test)
+#1  10 pts  ^01-.. : n <= 3, q = n-1                   (4 tests)
+#2  15 pts  ^02-.. : q = 2n                            (12 tests)
+#3  20 pts  ^03-.. : q = n                             (12 tests)
+#4  25 pts  ^04-.. : n odd, q = n-1                    (13 tests)
+#5  30 pts  ^0[0145]-.. : q = n-1, full (includes tests of #0, #1, #4)   (40 tests)
+
+[Languages]
+Any language enabled in the contest works (the program just uses stdin/stdout). Tested with C++17.
+
+[Manager protocol, for reference]
+CMS runs:  ./manager <fifo user->manager> <fifo manager->user>   with stdin = test input,
+stdout = score (0.0 or 1.0), stderr = message shown to the contestant.

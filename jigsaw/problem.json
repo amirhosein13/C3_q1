@@ -1,0 +1,15 @@
+{
+    "name": "jigsaw",
+    "code": "jigsaw",
+    "title": "Jigsaw Puzzle",
+    "type": "Communication",
+    "has_grader": false,
+    "has_manager": true,
+    "has_checker": false,
+    "num_processes": 1,
+    "java_enabled": false,
+    "python_enabled": false,
+    "time_limit": 2.0,
+    "memory_limit": 256,
+    "description": "Interactive: recover a hidden permutation from adjacency-fit placements, at most n-1 placements"
+}

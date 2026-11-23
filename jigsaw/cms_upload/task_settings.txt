@@ -8,7 +8,8 @@ with a manager (interactor). There is no checker; the manager computes the score
 [Task page]
 Name (short name / codename) : jigsaw
 Title                        : Jigsaw Puzzle
-Statement language code      : en          (file: statement.pdf)
+Statement language code      : fa          (file: statement.pdf, Persian, primary statement = ["fa"])
+                               en          (file: statement-en.pdf, English, optional)
 Attachments                  : attachments/sample.in , attachments/local_interactor.cpp
 Score precision              : 0
 Score mode                   : Use best among the tokened and the last submissions (CMS<=1.4 default)

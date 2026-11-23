@@ -15,12 +15,17 @@ rm -f "$O/tests.zip"; (cd "$W/tests" && zip -q -X "$O/tests.zip" *.in *.out)
 # 2) manager: static binary + source
 g++ -O2 -static -std=gnu++17 -o "$O/manager" "$T/grader/manager.cpp"
 cp "$T/grader/manager.cpp" "$O/manager.cpp"
-# 3) statement
-pandoc "$T/statement/index.md" -s --metadata title="Jigsaw Puzzle" -c "$T/tools/statement.css" --self-contained -o "$W/statement.html" 2>/dev/null \
-  || pandoc "$T/statement/index.md" -s --metadata title="Jigsaw Puzzle" -c "$T/tools/statement.css" --embed-resources --standalone -o "$W/statement.html"
-sed -i 's|<header id="title-block-header">.*</header>||; /<header id="title-block-header">/,/<\/header>/d' "$W/statement.html"
-node "$T/tools/make_pdf.js" "$W/statement.html" "$O/statement.pdf"
+# 3) statements: statement.pdf = Persian (primary, CMS language code "fa"), statement-en.pdf = English ("en")
+mkpdf() { # mkpdf <md> <css> <title> <lang> <dir> <out.pdf>
+  (cd "$T/tools" && pandoc "$1" -s --metadata title="$3" --metadata lang="$4" --metadata dir="$5" -c "$2" \
+     --embed-resources --standalone -o "$W/st.html")
+  sed -i '/<header id="title-block-header">/,/<\/header>/d' "$W/st.html"
+  node "$T/tools/make_pdf.js" "$W/st.html" "$6"
+}
+mkpdf "$T/statement/index-fa.md" statement-fa.css "پازل" fa rtl "$O/statement.pdf"
+mkpdf "$T/statement/index.md" statement.css "Jigsaw Puzzle" en ltr "$O/statement-en.pdf"
 cp "$O/statement.pdf" "$T/statement/statement.pdf"
+cp "$O/statement-en.pdf" "$T/statement/statement-en.pdf"
 # 4) attachments
 cp "$T/public/examples/sample.in" "$O/attachments/sample.in"
 cp "$T/public/local_interactor.cpp" "$O/attachments/local_interactor.cpp"

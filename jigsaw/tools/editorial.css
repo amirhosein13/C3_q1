@@ -1,0 +1,29 @@
+@font-face { font-family: "Vazirmatn"; src: url("fonts/Vazirmatn-Regular.ttf"); font-weight: normal; }
+@font-face { font-family: "Vazirmatn"; src: url("fonts/Vazirmatn-Bold.ttf"); font-weight: bold; }
+@page { size: A4; }
+html { direction: rtl; }
+body { font-family: "Vazirmatn", sans-serif; font-size: 11pt; line-height: 1.85; color: #1f2937; max-width: 46em; margin: auto; text-align: justify; }
+h1 { font-size: 17pt; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 3px; margin-top: 26px; break-after: avoid; }
+h2 { font-size: 13.5pt; color: #1e40af; margin-top: 18px; break-after: avoid; }
+.cover { text-align: center; padding: 50px 0 26px; border-bottom: 3px double #1e3a8a; margin-bottom: 18px; }
+.cover h1 { font-size: 34pt; border: none; margin: 0; }
+.cover h3 { font-size: 16pt; color: #374151; margin: 6px 0; }
+.cover p { color: #6b7280; }
+.box { border-radius: 8px; padding: 6px 14px; margin: 12px 0; break-inside: avoid; border-right: 5px solid; }
+.hint { background: #eff6ff; border-color: #3b82f6; }
+.howto { background: #f9fafb; border-color: #6b7280; }
+.warn { background: #fef2f2; border-color: #ef4444; }
+.note { background: #f0fdf4; border-color: #22c55e; }
+.figure { text-align: center; margin: 10px 0; break-inside: avoid; color: #4b5563; font-size: 10pt; }
+.figure img { width: 230px; }
+table { border-collapse: collapse; margin: 10px auto; break-inside: avoid; }
+th { background: #e0e7ff; }
+th, td { border: 1px solid #9ca3af; padding: 3px 10px; }
+.math, code { direction: ltr; unicode-bidi: isolate; }
+.math.inline { white-space: nowrap; }
+.math.display { display: block; text-align: center; margin: 6px 0; }
+code { font-family: "DejaVu Sans Mono", monospace; font-size: 9.5pt; }
+pre { direction: ltr; text-align: left; background: #0f172a; color: #e2e8f0; padding: 10px 12px; border-radius: 8px; font-size: 8.3pt; line-height: 1.4; white-space: pre-wrap; }
+pre code { font-size: 8.3pt; }
+math { direction: ltr; font-size: 1.05em; }
+math[display="block"] { display: block math; margin: 6px 0; }

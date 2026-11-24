@@ -5,6 +5,7 @@ Source: 2026 ICPC Asia Wuhan Regional, problem L. Prepared as an IOI-style task 
 * Task type: **Communication** (interactive, 1 process, contestant uses stdin/stdout), manager in `grader/manager.cpp`.
 * Limits: **2 s**, **256 MiB**; `1 ≤ T ≤ 1000` (tightened from 10^4 to bound FIFO round trips), `2 ≤ n ≤ 200`,
   `Σ n² ≤ 10^6`, at most `q` placements (`q = n-1` in the full problem).
+* Editorial (Persian, with hints): `editorial/editorial-fa.md` → `editorial/editorial.pdf` (`tools/build_editorial.sh`).
 * Statement: Persian `statement/index-fa.md` → `statement/statement.pdf` (primary), English `statement/index.md` → `statement/statement-en.pdf`; solution idea: `SOLUTION.md`.
 * Persian PDF uses the Vazirmatn font (`tools/fonts`, SIL OFL).
 * CMS package (admin-panel upload only): `cms_upload/`, guide in Persian: `CMS_UPLOAD_GUIDE.md`.
